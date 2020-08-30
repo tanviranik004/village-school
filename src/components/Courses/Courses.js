@@ -6,15 +6,18 @@ const Courses = (props) => {
         <div className="courses col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
             <div className="row">
                 {
-                    courses.map(crs => 
+                    courses.map(course =>
+                     
                         <div className="card col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" style={{width: '18rem'}}>
-                            <img src={crs.img} className="card-img-top" alt="..."/>
-                            <h4 className="card-title">{crs.name}</h4>
+                           <h6 className="card-id">#{course.id}</h6>
+                            <img src={course.img} className="card-img-top" alt="..."/>
+                            <h4 className="card-title">{course.name}</h4>
                             <div className="card-body">
-                                <p className="card-text">{crs.trainer}</p>
+                                <p className="card-text">{course.author}</p>
                             </div>
-                            <h5 className="card-title">${crs.price}</h5>
-                            <button onClick={() => props.handleEnrollNow(crs)} className="btn btn-primary">Enroll now</button>
+                            <h5 className="card-title">${course.price}</h5>
+          
+                            <button onClick={() => props.handleEnrollNow(course)} className="btn btn-primary">Enroll-now</button>
                         </div>
                     )
                 }
